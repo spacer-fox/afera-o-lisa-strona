@@ -9,9 +9,16 @@
 
 <svelte:head>
   <link rel="icon" href={favicon} />
+    <link 
+    rel="preload" 
+    href="/fonts/EFCO-Brookshire.woff2" 
+    as="font" 
+    type="font/woff2" 
+    crossorigin="anonymous"
+  />
 </svelte:head>
 
-<div class="min-h-screen flex flex-col bg-[#0f1220] text-zinc-100">
+<div class="min-h-screen flex flex-col">
   <Nav />
   <main class="flex-1">
     {@render children?.()}

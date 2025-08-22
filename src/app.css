@@ -1,2 +1,114 @@
 @import 'tailwindcss';
-@plugin '@tailwindcss/typography';
+
+@plugin "@tailwindcss/typography";
+
+:root {
+  /* Core Background Palette — midnight blues */
+  --mid-950: #020111;
+  /* almost-black indigo (page) */
+  --mid-900: #071224;
+  /* inky navy (deep bg) */
+  --mid-800: #0e1f33;
+  /* panel bg */
+  --mid-700: #162a44;
+  /* elevated elements */
+  --mid-600: #1f3b5a;
+  /* subtle highlights */
+
+  /* Text Colors (ivory on dark) */
+  --ink: #f5f0e6;
+  /* primary text */
+  --ink-faded: #c9c3b7;
+  /* secondary */
+  --ink-subtle: #8f8a80;
+  /* disabled */
+
+  /* Accent — SILVER first, with cool steely tint */
+  --silver: #cfd6df;
+  /* primary accent (buttons, rules) */
+  --silver-light: #e5ebf1;
+  /* hover */
+  --silver-deep: #8a98a9;
+  /* active/focus ring base */
+
+  /* Secondary Accent — a restrained brass for rare highlights (optional) */
+  --brass: #b39558;
+  --brass-deep: #6e5930;
+
+  /* Interactive / FX */
+  --neon: #00f6ff;
+  /* focus/active indicators */
+  --neon-glow: rgba(0, 246, 255, .14);
+  --blue-glow: rgba(51, 153, 221, .12);
+  /* replaces purple glow */
+
+  /* Status */
+  --success: #00bf63;
+  --warning: #ffb84d;
+  --error: #ff4d6a;
+  /* unchanged */
+
+  /* Gradients */
+  /* Page/background: smooth midnight → steel-blue */
+  --gradient-bg:
+    linear-gradient(135deg,
+      var(--mid-950) 0%,
+      var(--mid-900) 40%,
+      #0a1a2d 65%,
+      var(--mid-700) 82%,
+      var(--mid-600) 100%);
+
+  /* Accent surfaces: cool silver sheen */
+  --gradient-accent:
+    linear-gradient(135deg, var(--silver-deep), var(--silver));
+
+  /* Neon accent line/glow */
+  --gradient-neon:
+    linear-gradient(135deg, var(--neon), #20b7ff);
+
+  /* Card glass overlay (optional utility) */
+  --glass: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+}
+
+html,
+body {
+  height: 100%
+}
+
+/* Gradient - background */
+
+body {
+  background:
+    radial-gradient(1200px 800px at 20% 10%,
+      rgba(120, 100, 255, 0.10) 0%,
+      transparent 60%),
+    linear-gradient(135deg,
+      #020111 0%,
+      #031024 40%,
+      #071C33 65%,
+      #0E304D 80%,
+      #15476B 88%,
+      #1D5C8A 94%,
+      #2672A5 100%);
+  background-attachment: fixed;
+  color: var(--ink);
+}
+
+/* Fonts */
+
+/* EFCO Brookshire (display) */
+@font-face {
+  font-family: "EFCO Brookshire";
+  src: url("/fonts/EFCO-Brookshire.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-brookshire: "EFCO Brookshire", serif;
+  --font-cinzel: "Cinzel", serif;
+  --font-cinzel-decor: "Cinzel Decorative", serif;
+  --font-body: "Spectral", serif;
+  --font-ui: "Inter", system-ui, sans-serif;
+}
